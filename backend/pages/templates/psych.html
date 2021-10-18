@@ -1,0 +1,328 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block one %}
+      <div class="container sy1">
+        <div class="row my-5  justify-content-end ">
+          
+          <div class="col-sm-4 col-md-4 d-none d-md-block">
+            <p class="display-5" style="direction: rtl">
+              <span style="color: #62949D"> من انا؟</span><br>
+              <span class="display-3" style="color: #C19276"> 
+                انا المرشدة النفسية ايمان محمد بدران
+              </span>
+              <span style="color: #62949D">
+                حاصلة على درجة الماجستير في الارشاد النفسي وتربوي ولدي خبرة الواسعة في مجال الاستشارات النفسية
+              </span>
+            </p>
+          </div>
+          <div class="col-sm-2 col-md-1"></div>
+          <div class="col-sm-6 col-md-6">
+            <img class="img-responsive img-fluid" src="{%static 'images/eman.jpeg' %}" alt="Eman">
+          </div>
+          <div class="col-sm-4 col-md-4 d-block d-md-none">
+            <p class="display-5" style="direction: rtl">
+              <span style="color: #62949D"> من انا؟</span><br>
+              <span class="display-3" style="color: #C19276"> 
+                انا المرشدة النفسية ايمان محمد بدران
+              </span>
+              <span style="color: #62949D">
+                حاصلة على درجة الماجستير في الارشاد النفسي وتربوي ولدي خبرة الواسعة في مجال الاستشارات النفسية
+              </span>
+            </p>
+          </div>
+        </div>
+
+          
+        
+        </div>
+      </div>
+      <section id="help" style="direction: rtl">
+        <div class="container-md">
+          <div class="text-center">
+            <h2 style="color: #62949D"> كيف استطيع مساعدتك</h2>
+          <p class="lead text-muted">
+            بعض العناوين!
+          </p>
+          </div>
+          <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  تواصل مع الآخرين.
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <strong style="color: #C19276"> قم بإنشاء علاقات قوية مع الأشخاص الذين بإمكانهم أن يدعموك وحافظ عليها.</strong>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  العب! خطط لبعض التسلية! 
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <strong style="color: #C19276">خصص بعض الوقت من كل يوم للاستمتاع بشيء تحب القيام به حقًا. كن بسيطًا واضحك – فالضحك يعيد شحنك بالطاقة.
+                  </strong>
+              </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  اطلب المساعدة.
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <strong style="color: #C19276">كل شخص يتعثر في طريقه. اطلب المساعدة والمشورة من أحد الأصدقاء، أو زملاء العمل، أو المعلمين. ويمكنك التواصل  معي عن طريق الفيسبوك او التواصل معي في صندوق الدردشة اسفل</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+      </section>
+
+      <!-- here the chat started ----------------------------->
+      <section id="chat_section" class="color-br mt-5" style="direction: rtl">
+        <div id="messageDiv">
+          {% if user.is_authenticated and user.id == 2 %}
+          <div class="container-fluid h-100">
+            <div class="row justify-content-center h-100">
+              <div class="col-md-4 col-xl-3 chat">
+                <div class="card mb-sm-3 mb-md-0 contacts_card">
+                <div class="card-body contacts_body">
+                  <ul class="contacts">
+                    {% for i in users %}
+                    {% if i.id == id %}
+                    <li class="activee">
+                      <button type="button" class="btn" onClick="newUser({{i.id}})">
+                      <div class="d-flex bd-highlight">
+                        <div class="img_cont">
+                          <!-- here was an image ----------------------------------------------->
+                          
+                        </div>
+                        <div class="user_info">
+                          <span>{{i.id}}</span>
+                          
+                        </div>
+                      </div>
+                    </button>
+                    </li>
+                    {% else %}
+                  <li class="">
+                    <button type="button" class="btn" onClick="newUser({{i.id}})">
+                    <div class="d-flex bd-highlight">
+                      <div class="img_cont">
+                        <!-- here was an image ----------------------------------------------->
+                        
+                      </div>
+                      <div class="user_info">
+                        <span>{{i.id}}</span>
+                        
+                      </div>
+                    </div>
+                  </button>
+                  </li>
+                  {% endif %}
+                  {% endfor %}
+
+                  </ul>
+                </div>
+                <div class="card-footer"></div>
+              </div></div>
+
+
+
+              
+              <div class="col-md-8 col-xl-6 chat">
+                <div class="card">
+                  <div class="card-header msg_head">
+                    <div class="d-flex bd-highlight">
+                      <div class="img_cont">
+                         <!-- here was an image ---------------------------------------->
+                      </div>
+                      <div class="user_info">
+                        <span>دردش مع {{id}}</span>
+                      </div>
+                      
+                    </div>
+                    
+                  </div>
+                  <div class="card-body msg_card_body" id="messageTickDiv">
+                    
+                    {% for o in messages %}
+                      {% if o.to_id.id != 2 %}
+                        
+                        <div class="d-flex justify-content-start mb-4">
+                          <div class="img_cont_msg">
+                          <!-- here was an image-->
+                          </div>
+                          <div class="msg_cotainer">
+                            {{o.message}} 
+                            <!-- <span class="msg_time">{{o.time}}</span> -->
+                          </div>
+                        </div>
+                      {% else %}
+                        <div class="d-flex justify-content-end mb-4">
+                          <div class="msg_cotainer_send">
+                            {{o.message}}
+                            <!-- <span class="msg_time_send">{{o.time}}</span> -->
+                          </div>
+                          <div class="img_cont_msg">
+                                            <!-- here was an image-->
+                          </div>
+                        </div>
+                    {% endif %}
+                  {% endfor %}
+                   
+                  </div>
+                  <div class="card-footer">
+                    <div class="input-group">
+                      <textarea name="textAdmin" id="textAdmin" class="form-control type_msg" placeholder="Type your message..."></textarea>
+                      <div class="input-group-append">
+                        <button class="btn" onClick="sendMessage({{id}})">
+                        <span class="input-group-text send_btn"><i class="fas fa-location-arrow"></i></span>
+                      </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+
+          {% else %}
+          <div class="container-fluid h-100">
+            <div class="row justify-content-center h-100">
+        <div class="row justify-content-center">
+        <div class="col-md-8 col-xl-6 chat">
+					<div class="card">
+						<div class="card-header msg_head">
+							<div class="d-flex bd-highlight">
+								<div class="img_cont">
+									<img class="img-responsive img-fluid" src="{%static 'images/eman.jpeg' %}" alt="Eman" style="border-radius: 50%;height: 70">
+									
+								</div>
+								<div class="user_info">
+									<span>اسأل ايمان </span>
+								</div>
+								
+							</div>
+							<!-- <span id="action_menu_btn"><i class="fas fa-ellipsis-v"></i></span> -->
+							
+						</div>
+            <!--                here where we load the chat between the users                          ----------->
+            {% if user.is_authenticated %}
+
+						<div class="card-body msg_card_body">
+              {% for o in messages %}
+                {% if o.to_id.id == 2 %}
+                
+              
+							<div class="d-flex justify-content-start mb-4">
+								<div class="img_cont_msg">
+									<!-- here was an image-->
+								</div>
+								<div class="msg_cotainer">
+									{{o.message}} 
+									<!-- <span class="msg_time">{{o.time}}</span> -->
+								</div>
+							</div>
+              {% else %}
+							<div class="d-flex justify-content-end mb-4">
+								<div class="msg_cotainer_send">
+									{{o.message}}
+									<!-- <span class="msg_time_send">{{o.time}}</span> -->
+								</div>
+								<div class="img_cont_msg">
+                                    <!-- here was an image-->
+								</div>
+							</div>
+              {% endif %}
+            {% endfor %}
+						</div>
+            {% else %}
+            <div class="d-flex justify-content-start mb-4">
+              <div class="img_cont_msg">
+                <!-- here was an image-->
+              </div>
+              <div class="msg_cotainer">
+               الرجاء <span><a class="nav-link" href="/login"> تسجيل الدخول</a></span> للسؤال
+                <span class="msg_time">{{o.time}}</span>
+              </div>
+            </div>
+            {% endif %}
+            <form id="submitMessage" >
+              {% csrf_token %}
+						<div class="card-footer">
+							<div class="input-group">
+								<div class="input-group-append">
+								</div>
+								<input name="message" class="form-control type_msg" placeholder="Type your message..." id="messageHolder">
+								<div class="input-group-append">
+                  <button type="submit" class="btn">
+									<span class="input-group-text send_btn" ><i class="fas fa-location-arrow"></i></span>
+                </button>
+								</div>
+							</div>
+						</div>
+          </form>
+					</div>
+        </div>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+      </section >
+{% endblock one %}
+
+{% block scriptAfterBody %}
+      <script type="text/javascript" >
+      $(document).on('submit','#submitMessage', function (e){
+        e.preventDefault();
+        $.ajax({
+          type: 'POST',
+          url:'/psych.html/',
+          data:{
+            message:$('#messageHolder').val(),
+            csrfmiddlewaretoken: $('input[message=csrfmiddlewaretoken]').val(),
+
+          },
+          success: function(data){
+            $('#messageDiv').load(document.URL +  ' #messageDiv');
+          }
+        })
+      })
+      function newUser(id){
+        var url = document.URL;
+        url = url.split('/');
+        
+        url[url.length-2] = id;
+        url = url.join('/');
+        window.history.pushState("object or string", "tadafor.org", url);
+        $('#messageDiv').load(url +  ' #messageDiv');
+
+    }
+    function sendMessage(id){
+      $.ajax({
+        type: 'POST',
+        url:'/psych.html/'+id+'/',
+        data:{
+          message:$('#textAdmin').val(),
+        },
+        success: function(data){
+          $('#messageDiv').load(document.URL +  ' #messageDiv');
+        }
+      })
+    }
+      </script>
+{% endblock scriptAfterBody %}

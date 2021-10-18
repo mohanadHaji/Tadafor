@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block one %}
+<!------ Rehister ---------->
+<div class="text-muted text-center">
+  <h1 style="color: #62949D"> تسجيل حساب جديد</h1>
+</div>
+<form style="direction: rtl" method="post" class="form-horizontal text-center">
+    {% csrf_token %}
+    <div class="row justify-content-center text-center">
+        <div class="col-3 justify-content-center text-center">
+            <div class="mb-3">
+              <label for="nameEnter" class="form-label" style="color:#C19276">الاسم</label>
+              <input type="name" class="form-control" id="exampleInputName" aria-describedby="nameHelp" name="name">
+              <div id="nameHelp" class="form-text">يفضل اسم مزيف.</div>
+              <div id="nameHelp" class=" bg-danger">{{nameInfo}}</div>
+          </div>
+        </div>
+    </div>
+    <div class="row justify-content-center text-center">
+        <div class="col-3 justify-content-center text-center">
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label" style="color:#C19276">كلمة السر</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+              <div id="passHelp" class=" bg-danger">{{passInfo}}</div>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center text-center">
+      <div class="col-3 justify-content-center text-center">
+          <div class="mb-3">
+            <label for="exampleInputPassword2" class="form-label" style="color:#C19276">تاكيد كلمة السر</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" name="confirmPassword">
+            <div id="confHelp" class=" bg-danger">{{confInfo}}</div>
+          </div>
+      </div>
+  </div>
+        <p class="text-muted"> تملك حساب ؟ <a href="/login"> سجل دخولك هنا</a></p>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      
+    
+  </form>
+{% endblock one %}

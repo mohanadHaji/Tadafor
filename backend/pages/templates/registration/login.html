@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+{% block one %}
+<!------ lgoin ---------->
+<div class="text-muted text-center">
+  <h1 style="color: #62949D"> تسجيل الدخول</h1>
+</div>
+<form style="direction: rtl" method="post" class="form-horizontal text-center">
+    {% csrf_token %}
+    <div class="row justify-content-center text-center">
+        <div class="col-3 justify-content-center text-center">
+            <div class="mb-3">
+              <label for="nameEnter" class="form-label" style="color:#C19276">الاسم</label>
+              <input type="name" class="form-control" id="exampleInputName" aria-describedby="nameHelp" name="username">
+              {% if form.errors %}
+              <div id="nameHelp" class=" bg-danger">كلمة السر او الاسم خطا حاول مرة اخرى</div>
+              {% endif %}
+          </div>
+        </div>
+    </div>
+    <div class="row justify-content-center text-center">
+        <div class="col-3 justify-content-center text-center">
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label" style="color:#C19276">كلمة السر</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+              <div id="passHelp" class=" bg-danger">{{passInfo}}</div>
+            </div>
+        </div>
+    </div>
+  </div>
+        <p class="text-muted">لا تملك حساب ؟ <a href="/register.html"> سجل هنا</a></p>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      
+    
+  </form>
+{% endblock one %}
