@@ -11,12 +11,10 @@
     <script src="https://kit.fontawesome.com/615937acfc.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
-<body class="bg-light">
-  
-   <div style="text-align:center; border: none !important; padding-top:90" >
-    <img src="{%static 'images/tadforLogo.jpg' %}" class="img-thumbnail" alt="logo" style="width: 10%; height: 10%; margin:auto; border: none;  border-bottom: 1px solid;">
-   </div>
-   <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background: #62949D">
+<body class="bg-light; " >
+  <!-- style="background-image: url('{%static 'images/tadforLogo.jpg' %}'); background-repeat: no-repeat; background-size: cover;" -->
+   
+   <nav class="navbar navbar-expand-lg navbar-light fixed-right" style="background: #62949D">
     <div class="container-fluid">
       {% if user.is_authenticated %}
       
@@ -44,7 +42,7 @@
       <div class="collapse navbar-collapse hh" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto"  >
           <li class="nav-item" >
-              <a class="nav-link" href="/others.html" >مواضيع اخرى</a>
+              <a class="nav-link" href="/others.html" >اسئلة شائعة</a>
             </li>
           
           <li class="nav-item">
@@ -57,10 +55,10 @@
               <a class="nav-link" href="/psych.html">نفسية</a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="/index.html#staff">طاقمنا</a>
+              <a class="nav-link" href="/staff.html">طاقمنا</a>
             </li>
             <li class="nav-item active" >
-              <a class="nav-link" href="/index.html#welcome">نبذة مختصرة</a>
+              <a class="nav-link" href="/index.html#welcome">الصفحة الرئيسية</a>
             </li>
         </ul>
 
