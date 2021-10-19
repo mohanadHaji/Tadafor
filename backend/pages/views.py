@@ -10,6 +10,8 @@ from itertools import chain
 # Create your views here.
 def index(request):
     return render(request,'index.html')
+def staff(request):
+    return render(request, 'staff.html')
 @csrf_exempt
 def psych(request,id=-1):
     if request.user.is_authenticated and request.user.id == 2:
