@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load static %}
+{% block one %}
+<section id="staff" style="background-color:beige;">
+    <h1 class="pt-3 text-center display-5" style="direction: rtl; color: #62949D">طاقمنا:</h1>
+      <div class="row my-5 align-item-center justify-content-center">
+        <div class="col-8 col-lg col-xl-3">
+          <div class="card-body text-center py-4 smah">
+              <h4 class="card-title display-4" style="color: #C19276">
+                 المرشدة النفسيه
+              </h4>
+              <img src="{%static 'images/eman.jpeg' %}" class="img-responsive img-fluid" alt="ايمان">
+              <p class="lead card-subtitle">
+                  <p class="display-5 my-4 fw-bold" style="direction: rtl; color: #62949D">
+                    ايمان محمد بدران  
+                  </p>
+                  
+              </p>
+          </div>
+      </div>
+      <div class="col-8 col-lg col-xl-3">
+        <div class="card-body text-center py-4 smah">
+            <h4 class="card-title display-4" style="color: #C19276">
+                المحامية
+            </h4>
+            <img src="{%static 'images/sana.jpg' %}" class="img-responsive img-fluid" alt="سناء">
+            <p class="lead card-subtitle">
+                <p class="display-5 my-4 fw-bold" style="direction: rtl; color: #62949D">
+                  سناء ابراهيم جعفري
+                </p>
+                
+            </p>
+        </div>
+    </div>
+          <div class="col-8 col-lg col-xl-3">
+              <div class="card-body text-center py-4 smah">
+                  <h4 class="card-title display-4" style="color: #C19276">
+                      اخصائية التغذية
+                  </h4>
+                  <img src="{%static 'images/smah.jpeg' %}" class="img-responsive img-fluid" alt="سماح">
+                  <p class="lead card-subtitle">
+                      <p class="display-5 my-4 fw-bold" style="direction: rtl; color: #62949D">
+                          سماح سمير مشني
+                      </p>
+                     
+                  </p>
+              </div>
+          </div>
+          
+      </div>
+  </section>
+{% endblock one %}
